@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./style.css"></script>
+  <title>Contact</title>
+</head>
+
+<body>
+  <header class="container">
+    <h1>JinyanShui's webside</h1>
+    <nav class="container">
+      <a href="./index.html">Homepage</a> |
+      <a href="./project.html">Project</a> |
+      <a href="./conduct.html">Conduct</a>
+    </nav>
+  </header>
+  <main>
+    <button onclick="changeColor()">Change Color</button>
+
+    <table id="table">
+      <tr>
+        <th>My life</th>
+        <th>My plan</th>
+      </tr>
+      <tr>
+        <td>Study very hard and learn lots of things</td>
+        <td>hope to become a great computer science technician</td>
+      </tr>
+      <tr>
+        <td>so to gym a lot</td>
+        <td>hope to be healthy and wealthy</td>
+      </tr>
+    </table>
+
+  </main>
+  <article id="article2">
+    <h2>What is my life about?</h2>
+    <p> </p>
+    <!--The photo is from"C/Users/Downloads/A1/2.jpg"-->
+    <img id="img1" src="./img/2.jpg" alt="JinyanShui's picture">
+
+  </article>
+
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Searching..">
+
+  <table id="myTable">
+    <tr class="header">
+      <th style="width:60%;">Name</th>
+      <th style="width:40%;">Url</th>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td>www.google.com</td>
+    </tr>
+    <tr>
+      <td>Runoob</td>
+      <td>www.runoob.com</td>
+    </tr>
+    <tr>
+      <td>Taobao</td>
+      <td>www.taobao.com</td>
+    </tr>
+    <tr>
+      <td>Baidu</td>
+      <td>www.baidu.com</td>
+    </tr>
+  </table>
+
+  <script>
+    function changeColor() {
+      let body = document.getElementsByTagName("body")[0];
+      let colors = ["red", "blue", "green", "yellow", "purple"];
+      let randomColor = colors[Math.floor(Math.random() * colors.length)];
+      body.style.backgroundColor = randomColor;
+    }
+
+    function myFunction() {
+
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+  </script>
+
+  <footer>
+    <p> Jinyan </p>
+  </footer>
+</body>
+
+</html>
